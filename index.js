@@ -9,7 +9,7 @@ dotenv.config(); // Get the environment variables
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
+// Middlewares
 app.use(cors());
 app.use(express.json());
 
@@ -27,16 +27,15 @@ app.use(express.json());
 // Routes
 app.use('/', webRouter);
 
-// 404 Not Found handler
-app.use((req, res) => {  // Correct order: (req, res)
-    res.status(404).json({ // Correct usage of status
+
+app.use((req, res) => {
+    res.status(404).json({
         success: false,
         error: "Route not found, return back"
     });
-});
+}); // Route error handling
 
-// Error handling middleware
-app.use((err, req, res, next) => { // Correct order: (err, req, res, next)
+app.use((err, req, res, next) => {
     console.error('Internal application / Server error: ', err.stack);
     res.status(err.status || 500).json({
         success: false,

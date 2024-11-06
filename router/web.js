@@ -8,9 +8,7 @@ router.get('/tasks', TaskController.getTasks);
 
 router.post('/tasks', validateCreateTask, TaskController.createTask);
 
-router.get('/tasks/:id', validateTaskId, TaskController.getSpecificTask);
-
-router.patch('/tasks/:id', validateUpdateTask, TaskController.updateTasks);
+router.put('/tasks/:id', validateUpdateTask, TaskController.updateTasks);
 
 router.delete('/tasks/:id', validateTaskId, TaskController.deleteTask);
 

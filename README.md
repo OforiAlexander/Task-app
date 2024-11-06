@@ -1,28 +1,21 @@
-# 🚀 Advanced Task Manager API
+# Task API Creation and Docs
 
 ![Node.js](https://img.shields.io/badge/Node.js-v18.x-green.svg)
 ![Express](https://img.shields.io/badge/Express-v4.x-blue.svg)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-v14.x-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-#### This completed RESTFUL API was built with Nodejs Expressjs (For the backend), and PostgreSQL (For database manupulation).
+#### My completed RESTFUL API Task was built with Nodejs Expressjs (For the backend), and PostgreSQL (For database manupulation).
 - It follows the MVC structure.
 
-## 📑 Table of Contents
 
-- [Features](#-features)
-- [Prerequisites](#-prerequisites)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-
-## ✨ Features
+## Features
 
 - **Robust Architecture**
 - **PostgreSQL Integration**
 - **Error Handling**
 - **Environment Configuration**
 
-## 🔧 Prerequisites
+## Prerequisites
 
 Before you begin, install:
 
@@ -30,7 +23,7 @@ Before you begin, install:
 - PostgreSQL (v14.x or higher)
 - npm (v9.x or higher)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 project/
@@ -42,13 +35,16 @@ project/
 │   └── task.js
 ├── router/
 │   └── web.js
+├── seeder/
+│   └── seed.js
 ├── .env.example      
 ├── .gitignore
 ├── index.js           
 └── package.json
+└── validate.js
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 Follow the steps below to clone with repo:
 
@@ -82,16 +78,19 @@ Follow the steps below to clone with repo:
 4. **Set up the database**
    ```bash
    psql -U postgres
-   CREATE DATABASE task_manager;
-   \c task_manager
+   CREATE DATABASE tasks;
+   \c tasks
+
+   # You can use tableplus or pgAdmin to manage the database
    ```
-   ```sql
-    SQL File has been added to the project, same as a seeder to test your db
+   - sql
+   A seeder js file has been added to test your db
+   run or change the directory if you please
+   __
+   ```bash
+   node ./seeder/seed.js
    ```
-   ``` seeder
-   npm run ./seeder/seed.js
-   # This is to run you seeder. 
-   ```
+
 
 5. **Start the server**
    ```bash
@@ -105,9 +104,8 @@ Follow the steps below to clone with repo:
 |--------|----------|-------------|
 | GET | `/tasks` | Get all tasks |
 | POST | `/tasks` | Create a new task |
-| GET | `/tasks/:id` | Get a specific task |
-| PATCH | `/tasks/:id` | Update a task |
+| PUT | `/tasks/:id` | Update a the completed field of task |
 | DELETE | `/tasks/:id` | Delete a task |
 
 ---
-Task completed / API built by [Alexander Ofori](https://github.com/OforiAlexander)
+NTC Task completed

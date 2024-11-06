@@ -19,12 +19,18 @@ const sequelize = new Sequelize({
     }
 });
 
+/**
+ * Checks the database connection to PostgreSQL
+ * @returns {Promise<boolean>} - Returns true if the connection is successful, otherwise false
+ */
 export const checkDbConnection = async () => {
     try {
+        // Attempt to authenticate the database connection
         await sequelize.authenticate();
         console.log("Database connected to PostgreSQL");
         return true;
     } catch (error) {
+        // Log an error message if the connection fails
         console.error("Connection not made for PostgreSQL: ", error.message);
         return false;
     }
