@@ -7,14 +7,6 @@
 #### My completed RESTFUL API Task was built with Nodejs Expressjs (For the backend), and PostgreSQL (For database manupulation).
 - It follows the MVC structure.
 
-
-## Features
-
-- **Robust Architecture**
-- **PostgreSQL Integration**
-- **Error Handling**
-- **Environment Configuration**
-
 ## Prerequisites
 
 Before you begin, install:
